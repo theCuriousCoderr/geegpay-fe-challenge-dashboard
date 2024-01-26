@@ -65,7 +65,7 @@ const [theme, setTheme] = useState("light")
         </div>
         <div className={`relative w-full h-full ${theme === "light" ? "bg-[#FAFAFA]" : "bg-gray-900" }`}>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home theme={theme} />} />
             <Route path="/trend-up" element={<TrendUp />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/box" element={<Box />} />

@@ -110,14 +110,14 @@ function Home({ theme }) {
     },
   });
 
+
   const options = {
     responsive: true,
     scales: {
       y: theme === "light" ? { 
-        ticks: { color: "black"}, 
         border: { dash: [2, 4] },
       } : {
-        grid: {color: "#A2A2A250"},
+        grid: {color: "rgba(0,255,0,1)"},
         ticks: { color: "white"}, 
         border: { dash: [2, 4] },
       } ,
