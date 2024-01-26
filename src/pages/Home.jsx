@@ -87,6 +87,7 @@ function Home({ theme }) {
   const [trendFilter, setTrendFilter] = useState("month");
   const [selectInput, setSelectInput] = useState("monthly");
   const [viewAll, setViewAll] = useState(false)
+  const [viewInvoice, setViewInvoice] = useState("")
   const [chart, setChart] = useState({
     data: "",
     options: "",
@@ -147,6 +148,7 @@ function Home({ theme }) {
   };
 
   useEffect(() => {
+    window.scrollTo(0,0)
     let arr1 = new Array(12).fill(0);
     let label = Array.from({ length: 12 }, (_, index) => index + 1);
     let val = label.map((value, id) => {
@@ -236,6 +238,12 @@ function Home({ theme }) {
     <div
       className={`relative w-full h-screen xs:max-lg:h-auto p-3 ${theme === "light" ? "bg-[#FAFAFA]" : "bg-gray-900"}  flex flex-col justify-between `}
     >
+      {viewInvoice !== "" && <div onClick={()=> {setViewInvoice("")}} className="absolute w-full h-full bg-red-500 left-0 top-0">
+        {/* <div>
+
+        </div> */}
+
+      </div>}
       {viewAll && <div className={`absolute overflow-scroll left-0 w-full h-full ${theme === "light" ? "bg-white" : "bg-gray-900" }  slideInRight flex justify-center`}>
         <div onClick={()=> setViewAll(false)} className="fixed size-10 xs:max-md:size-8 bg-slate-200 hover:bg-red-200 rounded-md right-0 m-10 xs:max-lg:m-0 cursor-pointer">
           <p className="text-3xl xs:max-md:text-2xl flex items-center justify-center">X</p>
@@ -287,7 +295,7 @@ function Home({ theme }) {
             >
               Sales Trends
             </p>
-            <div className="flex items-center bg-red-40 w-40 gap-2">
+            <div className="flex items-center justify-end bg-red-40 w-40 gap-2">
               <p
                 className={`font-jarkarta font-medium ${
                   theme === "light" ? "text-[#3A3F51]" : "text-slate-50"
@@ -321,7 +329,7 @@ function Home({ theme }) {
           </div>
         </div>
         <p
-          className={`lg:hidden text-xl font-semibold md:mt-10 md:text-center ${
+          className={`lg:hidden text-2xl font-semibold xs:max-md:mt-10 md:text-center ${
             theme !== "light" && "text-slate-100"
           }`}
         >
@@ -383,8 +391,8 @@ function Home({ theme }) {
       <div className="flex xs:max-lg:flex-col justify-between bg-yellow-40 xs:max-lg:h-auto h-[49%]">
         <div className={`w-[59%] overflow-scroll xs:max-lg:w-full xs:max-lg:my-10 ${theme === "light" ? "bg-white" : "bg-gray-900 border border-slate-700" }  h-full xs:max-lg:h-auto md:h-auto rounded-xl px-4 py-3`}>
           <div className="flex justify-between">
-            <p className={`font-jarkarta font-semibold  text-base ${theme === "light" ? "text-[#26282C]" : "text-slate-200" } `}>Last Orders</p>
-            <button onClick={() => {window.scrollTo(0,0); setViewAll(true)}} className="font-jarkarta font-medium text-[#34CAA5] text-base">See All</button>
+            <p className={`font-jarkarta font-semibold  text-base ${theme === "light" ? "text-[#26282C]" : "text-slate-200" } `}>Last Orders (5)</p>
+            <button onClick={() => {setViewAll(true)}} className="font-jarkarta font-medium text-[#34CAA5] text-base">See All</button>
           </div>
           <table className="w-full">
             <tr className={`font-jarkarta font-medium text-[#9CA4AB] text-left`}>
@@ -395,7 +403,7 @@ function Home({ theme }) {
               <th className="bg-red-40 w-[10%] xs:max-md:text-sm">Invoice</th>
             </tr>
             {analytics.map(platforms => {
-              let len = Array.from({length: analytics.length}, (_, index) => index + 1).reverse()
+              let len = Array.from({length: 30}, (_, index) => index + 1).reverse()
               len.length = 5
               let chainRes = platforms.transactionHistory.map(history => {
                 if (len.includes(history.orderNumber)) {
@@ -411,8 +419,8 @@ function Home({ theme }) {
                       <td className={`font-jarkarta font-normal text-base xs:max-md:text-xs   ${theme === "light" ? "text-[#737373]" : "text-slate-400" } `}>{moment(history.date).format("ll")}</td>
                       <td className={`font-jarkarta font-medium text-base xs:max-md:text-xs ${theme === "light" ? "text-[#0D062D]" : "text-white" } `}>${history.amount}</td>
                       <td className={`font-jarkarta bg-red-60 font-normal text-base xs:max-md:text-xs ${history.orderStatus.toLowerCase() === "paid" ? "text-[#34CAA5] " : "text-[#ED544E] " }`}>{history.orderStatus}</td>
-                      <td className="fle items-center bg-red-40 h-ful gap-1">
-                        <div className="h-ful flex items-center">
+                      <td onClick={() => setViewInvoice(history)} className="fle items-center hover:bg-red-500 bg-red-40 h-ful gap-1">
+                        <div className="h-ful flex gap-1 items-center">
                         <div className="size-4 ">
                           <img src={view} alt="view icon" />
                         </div>
