@@ -10,7 +10,8 @@ export const analytics = [
                 orderNumber: 11,
                 orderInfo: {from: "Nikolas Patel", to: "Amari Knight"},
                 deliverables: {desc: "Shoes", qty: 5, wt: "5kg"},
-                paymentMode: "Cryptocurrency"
+                paymentMode: "Cryptocurrency",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/31.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -20,7 +21,8 @@ export const analytics = [
                 orderNumber: 30,
                 orderInfo: {from: "Marcus Bergson", to: "Camden Lucas"},
                 deliverables: {desc: "Chemicals", qty: 8, wt: "50kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/2.jpg "
             },
             {
                 orderStatus: "Paid",
@@ -30,7 +32,8 @@ export const analytics = [
                 orderNumber: 10,
                 orderInfo: {from: "Henley Rose", to: "Ahmad Olsen"},
                 deliverables: {desc: "Shoes", qty: 5, wt: "5kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/71.jpg"
             }
         ]
     },
@@ -45,7 +48,8 @@ export const analytics = [
                 orderNumber: 12,
                 orderInfo: {from: "John Adam", to: "Vada Stephens"},
                 deliverables: {desc: "Clothes", qty: 7, wt: "5kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/52.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -55,7 +59,8 @@ export const analytics = [
                 orderNumber: 29,
                 orderInfo: {from: "Jaydon Vaccaro", to: "Melody Bennett"},
                 deliverables: {desc: "Furniture", qty: 3, wt: "500kg"},
-                paymentMode: "Cryptocurrency"
+                paymentMode: "Cryptocurrency",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/23.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -65,7 +70,8 @@ export const analytics = [
                 orderNumber: 9,
                 orderInfo: {from: "Shelby Miller", to: "Noah Haynes"},
                 deliverables: {desc: "Equipments", qty: 10, wt: "100kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/5.jpg"
             }
         ]
     },
@@ -80,7 +86,8 @@ export const analytics = [
                 orderNumber: 13,
                 orderInfo: {from: "Ayleen Patrick", to: "Margo Drake"},
                 deliverables: {desc: "Food", qty: 4, wt: "20kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/53.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -90,7 +97,8 @@ export const analytics = [
                 orderNumber: 28,
                 orderInfo: {from: "Corey Schleifer", to: "Alexis Mann"},
                 deliverables: {desc: "Devices", qty: 20, wt: "20kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/38.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -100,7 +108,8 @@ export const analytics = [
                 orderNumber: 8,
                 orderInfo: {from: "Reagan Watts", to: "Melina Hamilton"},
                 deliverables: {desc: "Shoes", qty: 5, wt: "30kg"},
-                paymentMode: "Cryptocurrency"
+                paymentMode: "Cryptocurrency", 
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/72.jpg"
             }
         ]
     },
@@ -115,7 +124,8 @@ export const analytics = [
                 orderNumber: 14,
                 orderInfo: {from: "Orlando Hart", to: "Amias Juarez"},
                 deliverables: {desc: "Electronics", qty: 15, wt: "130kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/56.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -125,7 +135,8 @@ export const analytics = [
                 orderNumber: 27,
                 orderInfo: {from: "Cooper Press", to: "Zachary Hoffman"},
                 deliverables: {desc: "Furniture", qty: 2, wt: "250kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/21.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -135,7 +146,8 @@ export const analytics = [
                 orderNumber: 7,
                 orderInfo: {from: "Bowie Butler", to: "Johnathan Owens"},
                 deliverables: {desc: "Cars", qty: 5, wt: "10000kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/1.jpg"
             }
         ]
     },
@@ -150,7 +162,8 @@ export const analytics = [
                 orderNumber: 15,
                 orderInfo: {from: "Troy Chandler", to: "Frederick Walton"},
                 deliverables: {desc: "Produces", qty: 28, wt: "330kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/29.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -160,7 +173,8 @@ export const analytics = [
                 orderNumber: 26,
                 orderInfo: {from: "Philip Lubin", to: "Jackson Lewis"},
                 deliverables: {desc: "Food", qty: 15, wt: "180kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/44.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -170,7 +184,8 @@ export const analytics = [
                 orderNumber: 6,
                 orderInfo: {from: "Conrad Morrow", to: "Kylan Ryan"},
                 deliverables: {desc: "Furniture", qty: 1, wt: "100kg"},
-                paymentMode: "Cryptocurrency"
+                paymentMode: "Cryptocurrency",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/13.jpg"
             }
         ]
     },
@@ -185,7 +200,8 @@ export const analytics = [
                 orderNumber: 16,
                 orderInfo: {from: "Lochlan Sweeney", to: "Brayden Patton"},
                 deliverables: {desc: "Cars", qty: 20, wt: "40000kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/female/70.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -195,7 +211,8 @@ export const analytics = [
                 orderNumber: 25,
                 orderInfo: {from: "Leo Le", to: "Dante Lynch"},
                 deliverables: {desc: "Shoes", qty: 5, wt: "10kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash", 
+                photo: "https://xsgames.co/randomusers/assets/avatars/female/53.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -205,7 +222,8 @@ export const analytics = [
                 orderNumber: 5,
                 orderInfo: {from: "Trey Gibson", to: "Langston Kirby"},
                 deliverables: {desc: "Clothes", qty: 12, wt: "75kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/55.jpg"
             }
         ]
     },
@@ -220,7 +238,8 @@ export const analytics = [
                 orderNumber: 17,
                 orderInfo: {from: "Jake Farrell", to: "Uriah Clayton"},
                 deliverables: {desc: "Chemicals", qty: 7, wt: "110kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/11.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -230,7 +249,8 @@ export const analytics = [
                 orderNumber: 24,
                 orderInfo: {from: "Bennett Hernandez", to: "Zyon Tate"},
                 deliverables: {desc: "Chemicals", qty: 2, wt: "100kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/32.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -240,7 +260,8 @@ export const analytics = [
                 orderNumber: 4,
                 orderInfo: {from: "Rowan Edwards", to: "Amalia Holloway"},
                 deliverables: {desc: "Food", qty: 25, wt: "300kg"},
-                paymentMode: "Cryptocurrency"
+                paymentMode: "Cryptocurrency",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/3.jpg"
             }
         ]
     },
@@ -255,7 +276,8 @@ export const analytics = [
                 orderNumber: 18,
                 orderInfo: {from: "Treasure Fernandez", to: "Savannah Moss"},
                 deliverables: {desc: "Equipments", qty: 10, wt: "1000kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/female/76.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -265,7 +287,8 @@ export const analytics = [
                 orderNumber: 23,
                 orderInfo: {from: "Kaia Walton", to: "Araceli Bruce"},
                 deliverables: {desc: "Devices", qty: 15, wt: "150kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/female/50.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -275,7 +298,8 @@ export const analytics = [
                 orderNumber: 3,
                 orderInfo: {from: "Delaney Graham", to: "Amy Molina"},
                 deliverables: {desc: "Produces", qty: 32, wt: "2100kg"},
-                paymentMode: "Cryptocurrency"
+                paymentMode: "Cryptocurrency",
+                photo: "https://xsgames.co/randomusers/assets/avatars/female/77.jpg"
             }
         ]
     },
@@ -290,7 +314,8 @@ export const analytics = [
                 orderNumber: 19,
                 orderInfo: {from: "Alyssa Morrison", to: "Natalia Allison"},
                 deliverables: {desc: "Food", qty: 20, wt: "400kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/female/21.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -300,7 +325,8 @@ export const analytics = [
                 orderNumber: 22,
                 orderInfo: {from: "Rodney Larson", to: "Amos Pierce"},
                 deliverables: {desc: "Shoes", qty: 5, wt: "25kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/39.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -310,7 +336,8 @@ export const analytics = [
                 orderNumber: 2,
                 orderInfo: {from: "Benson Barnes", to: "Kobe Heath"},
                 deliverables: {desc: "Shoes", qty: 10, wt: "kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/43.jpg"
             }
         ]
     },
@@ -325,7 +352,8 @@ export const analytics = [
                 orderNumber: 20,
                 orderInfo: {from: "Troy Higgins", to: "Eddie Horn"},
                 deliverables: {desc: "Food", qty: 1, wt: "20kg"},
-                paymentMode: "Cash"
+                paymentMode: "Cash",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/25.jpg"
             },
             {
                 orderStatus: "Paid",
@@ -335,7 +363,8 @@ export const analytics = [
                 orderNumber: 21,
                 orderInfo: {from: "Castiel Stanley", to: "Tyler West"},
                 deliverables: {desc: "Cars", qty: 5, wt: "10000kg"},
-                paymentMode: "Cryptocurrency"
+                paymentMode: "Cryptocurrency",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/62.jpg"
             },
             {
                 orderStatus: "Refund",
@@ -345,7 +374,8 @@ export const analytics = [
                 orderNumber: 1,
                 orderInfo: {from: "Phillip Alvarado", to: "Cain Rodriguez"},
                 deliverables: {desc: "Clothes", qty: 12, wt: "230kg"},
-                paymentMode: "Bank Transfer"
+                paymentMode: "Bank Transfer",
+                photo: "https://xsgames.co/randomusers/assets/avatars/male/74.jpg"
             }
         ]
     },

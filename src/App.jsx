@@ -59,7 +59,7 @@ const [theme, setTheme] = useState("light")
         {expandSideNav && <ExpandMenu tab={tab} setTab={setTab} theme={theme} setTheme={setTheme} /> }
       </div>
       <div className={`w-full h-full  ${theme === "light" ? "bg-[#FAFAFA]" : "bg-gray-900" } `}>
-        <div className={`h-20 border-b ${theme === "light" ? "border-[#DADDDD]  bg-[#FAFAFA]" : "border-slate-800 bg-gray-900" }`}>
+        <div className={`h-20 xs:max-lg:h-16 border-b ${theme === "light" ? "border-[#DADDDD]  bg-[#FAFAFA]" : "border-slate-800 bg-gray-900" }`}>
           <Header theme={theme} />
           <MobileHeader theme={theme} setTheme={setTheme} />
         </div>

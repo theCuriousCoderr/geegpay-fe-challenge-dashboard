@@ -76,7 +76,7 @@ function ContractMenu({ tab, setTab, theme, setTheme }) {
 
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2 mt-20">
         {[{ icon: arrow_right }, { icon: settings }, { icon: logout }].map(
           (items) => {
             return (

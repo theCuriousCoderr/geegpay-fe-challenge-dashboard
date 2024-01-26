@@ -33,7 +33,7 @@ function MobileBottomNav({theme, setTab}) {
               
           </div>
           <div className='w-full flex items-center justify-center bg-red-40'>
-            <p className='font-jarkarta font-light text-xs text-[#525252] '>{items.text}</p>
+            <p className={`font-jarkarta font-light text-xs  ${theme === "light" ?'text-slate-300' : "text-slate-900" } `}>{items.text}</p>
           </div>
       </div>
 
