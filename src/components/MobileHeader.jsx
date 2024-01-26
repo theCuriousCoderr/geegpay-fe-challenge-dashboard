@@ -16,13 +16,13 @@ function MobileHeader({ theme, setTheme }) {
       <div className="w-1/2 bg-red-90 flex items-center justify-center">
         <div className="size-8 bg-red-40">
           {theme === "light" ? (
-            <div onClick={() => setTheme("dark")} className="bg-[#34CAA5] p-1 rounded-full">
-              <img src={sun} alt="light mode button" />{" "}
+            <div onClick={() => setTheme("dark")} className="bg-gray-900 p-1 rounded-full">
+              <img src={moon} alt="dark mode button" />
             </div>
           ) : (
-            <div onClick={() => setTheme("light")} className="bg-slate-900 p-1 rounded-full">
-              {" "}
-              <img src={moon} alt="dark mode button" />
+            <div onClick={() => setTheme("light")} className="bg-[#34CAA5] p-1 rounded-full">
+              <img src={sun} alt="light mode button" />{" "}
+              
             </div>
           )}
         </div>

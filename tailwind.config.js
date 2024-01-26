@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        jarkarta: ["Plus Jakarta Sans", "sans-serif" ]
+        jarkarta: ["Plus Jakarta Sans", "sans-serif" ],
+        inter: ["Inter", "sans-serif"]
       },
       screens: {
         xs: "340px"

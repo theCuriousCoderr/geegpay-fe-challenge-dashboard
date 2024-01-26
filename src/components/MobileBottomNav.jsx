@@ -11,11 +11,11 @@ import settings from "../images/settings.png";
 import logout from "../images/logout.png";
 import { useNavigate } from 'react-router-dom';
 
-function MobileBottomNav({setTab}) {
+function MobileBottomNav({theme, setTab}) {
   let navigate = useNavigate()
   let path = window.location.pathname
   return (
-    <div className='flex justify-between'>
+    <div className={`${theme === "light" ? "bg-gray-900" : "bg-white" } flex justify-between`}>
        { [ {icon: home, text: "Home", path: "/"},
          {icon: trend_up, text: "Trend", path: "/trend-up"},
          {icon: profile, text: "Profile", path: "/profile"},
