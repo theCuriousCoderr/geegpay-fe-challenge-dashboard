@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import HomeIcon from "./HomeIcon";
 
-function ContractMenu({ tab, setTab, theme, setTheme }) {
+function ContractMenu({setExpandSideNav, tab, setTab, theme, setTheme }) {
   let navigate = useNavigate();
   let path = window.location.pathname
 
@@ -77,10 +77,14 @@ function ContractMenu({ tab, setTab, theme, setTheme }) {
       </div>
 
       <div className="space-y-2 mt-20">
-        {[{ icon: arrow_right }, { icon: settings }, { icon: logout }].map(
+        {[{ icon: arrow_right, text: "open" }, { icon: settings, path: "/settings" }, { icon: logout, path: "/logout" }].map(
           (items) => {
             return (
-              <div className="bg-red-70 w-full h-10 flex items-center justify-center">
+              // onClick={()=> {setExpandSideNav(!expandSideNav)}}
+              <div onClick={() => {items.text ? setExpandSideNav(prevState => !prevState) : navigate(items.path) }} className={`relative bg-red-70 ${theme === "light" ? "hover:bg-[#34CAA5] hover:bg-opacity-10 " : "hover:bg-slate-700" } rounded-lg cursor-pointer w-full h-10 flex items-center justify-center`}>
+                  {path === items.path && (
+                <div className={`absolute h-[50%] w-1 rounded-l-md ${theme === "light" ? "bg-[#0D062D]" : "bg-white" }  right-0`}></div>
+              )}
                 <div className="size-7">
                   <img src={items.icon} alt="logout page icon" />
                 </div>

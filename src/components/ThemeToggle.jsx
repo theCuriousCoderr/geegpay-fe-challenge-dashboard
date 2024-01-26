@@ -4,7 +4,7 @@ import moon from "../images/moon.png";
 
 function ThemeToggle({ theme, setTheme }) {
   return (
-    <div className={`cursor-pointer relative ${theme === "light" ? "bg-white" : "bg-gray-700" }  w-10 mx-auto h-24 rounded-t-full rounded-b-full p-2 flex justify-center`}>
+    <div className={`cursor-pointer relative ${theme === "light" ? "bg-white" : "bg-gradient-to-tr from-slate-500 to-gray-900" }  w-10 mx-auto h-24 rounded-t-full rounded-b-full p-2 flex justify-center`}>
       <div
         className={`absolute ${
           theme === "light" ? "top-2 bg-[#34CAA5]" : "bottom-2 bg-[#34CAA5]"

@@ -3,7 +3,11 @@ import search from '../images/search.png'
 import ola from '../images/ola.jfif'
 import date from '../images/date.png'
 import alert from '../images/alert.png'
+import arrow_down from '../images/arrow_down.png'
 import moment from 'moment'
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined';
 
 function Header({theme}) {
   return (
@@ -14,16 +18,19 @@ function Header({theme}) {
               <div className='absolute top-0 left-0 h-full aspect-square bg-red-40 flex items-center justify-center'>
                 <div className='size-4'>
                 <img src={search} alt="search icon" />
+                
                 </div>
                 
               </div>
                 <input type="search" placeholder='Search...' className='bg-transparent w-full h-full rounded-full border border-[#DADDDD] pl-10 pr-3 py-2 placeholder:font-inter placeholder:font-normal placeholder:text-[#A3A3A3] ' />
             </div>
             <div className='w-64 bg-yellow-40 flex items-center'>
+              
                 <div className='w-[80%] flex items-center bg-blue-60'>
                   <div className='w-[20%] h-full bg-red-40 flex items-center justify-center'>
-                    <div className='size-5 bg-red-70'>
-                    <img src={date} alt="calendar icon" className={`${theme !== "light" && "bg-gray-800 rounded-full size-3 object-contain w-full h-full" }`} />
+                    <div className='size-5 bg-red-70 flex items-center justify-center text-white rounded-full'>
+                    {theme === "light" ? <img src={date} alt="calendar icon"/> : <CalendarMonthOutlinedIcon />  }
+                    
                     </div>
                     
                   </div>
@@ -31,8 +38,8 @@ function Header({theme}) {
                 </div>
                 <div className='w-[20%] flex items-center justify-center bg-red-40 '>
                   <div className='size-10 rounded-full border border-[#DADDDD] flex items-center justify-center  '>
-                  <div className='size-5'>
-                  <img src={alert} alt="notifications icon" />
+                  <div className='size-5 flex items-center justify-center text-white'>
+                  {theme === "light" ? <img src={alert} alt="notifications icon" /> : <NotificationsOutlinedIcon /> }
                   </div>
                   </div>
                  
@@ -40,11 +47,23 @@ function Header({theme}) {
 
             </div>
 
-            <div className='w-52 bg-whit rounded-full border border-[#DADDDD] p-1 flex'>
-              <div className='h-full aspect-square bg-red-30 rounded-full'>
-                <img src={ola} alt="user image" className='h-full w-full object-cover rounded-full' />
+            <div className='w-52 bg-whit rounded-full border border-[#DADDDD] p-1 flex flex-wrap'>
+              <div className='h-full aspect-square bg-red-300 rounded-full flex items-center justify-center'>
+                <div className='size-full flex items-center justify-center'>
+                <img src={ola} alt="user image" className={`h-full w-full object-cover rounded-full ${theme !== "light" && "border-2 border-slate-200"}`} />
+                </div>
+                
               </div>
-              <div className='bg-red-40 h-full w-full ml-2'></div>
+              <div className='bg-red-40 h-full w-[60%] ml-2 pr-2'>
+                <p className={`font-inter font-normal text-xs text-right ${theme === "light" ? "text-[#26282C]" : "text-slate-300" } `}>Ola Lekan</p>
+                <p className='font-inter font-xs truncate text-ellipsis text-sm text-right text-[#787486]'>elijahdimeji549@gmail.com</p>
+              </div>
+              <div className='w-[10%] bg-red-40 flex items-center justify-center'>
+                <div className='size-5 flex items-center justify-center text-white'>
+                  {theme === "light" ? <img src={arrow_down} alt="expand profile." /> : <KeyboardArrowDownOutlinedIcon /> }
+
+                </div>
+              </div>
 
             </div>
 

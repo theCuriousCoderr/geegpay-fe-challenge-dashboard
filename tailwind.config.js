@@ -12,6 +12,9 @@ export default {
       },
       screens: {
         xs: "340px"
+      },
+      colors: {
+        geeg: "#34CAA5"
       }
     },
   },

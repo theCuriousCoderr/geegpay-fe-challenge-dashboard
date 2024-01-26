@@ -9,6 +9,7 @@ export function getRelativeStats(param) {
     average_sales: 0,
     total_income: 0,
     platforms: [],
+    platformStats: {}
   };
   let prevStats = {
     total_order: 0,
@@ -16,6 +17,7 @@ export function getRelativeStats(param) {
     average_sales: 0,
     total_income: 0,
     platforms: [],
+    platformStats: {}
   };
 
   if (param === "day") {
@@ -25,6 +27,11 @@ export function getRelativeStats(param) {
       for (let history of platform.transactionHistory) {
         if (moment(history.date).dayOfYear() === today && (moment(history.date).year() === 2024)) {
           todayStats.platforms.push(platform.platformName);
+          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
+            todayStats.platformStats[platform.platformName] += history.amount
+          } else {
+            todayStats.platformStats[platform.platformName] = history.amount
+          }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {
@@ -33,6 +40,11 @@ export function getRelativeStats(param) {
         }
         if (moment(history.date).dayOfYear() === prevDay && (moment(history.date).year() === 2024)) {
           prevStats.platforms.push(platform.platformName);
+          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
+            prevStats.platformStats[platform.platformName] += history.amount
+          } else {
+            prevStats.platformStats[platform.platformName] = history.amount
+          }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {
@@ -50,6 +62,11 @@ export function getRelativeStats(param) {
       for (let history of platform.transactionHistory) {
         if (moment(history.date).isoWeek() === thisWeek  && (moment(history.date).year() === 2024)) {
           todayStats.platforms.push(platform.platformName);
+          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
+            todayStats.platformStats[platform.platformName] += history.amount
+          } else {
+            todayStats.platformStats[platform.platformName] = history.amount
+          }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {
@@ -58,6 +75,11 @@ export function getRelativeStats(param) {
         }
         if (moment(history.date).dayOfYear() === prevWeek && (moment(history.date).year() === 2024)) {
           prevStats.platforms.push(platform.platformName);
+          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
+            prevStats.platformStats[platform.platformName] += history.amount
+          } else {
+            prevStats.platformStats[platform.platformName] = history.amount
+          }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {
@@ -75,6 +97,11 @@ export function getRelativeStats(param) {
       for (let history of platform.transactionHistory) {
         if (moment(history.date).month() === thisMonth  && (moment(history.date).year() === 2024)) {
           todayStats.platforms.push(platform.platformName);
+          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
+            todayStats.platformStats[platform.platformName] += history.amount
+          } else {
+            todayStats.platformStats[platform.platformName] = history.amount
+          }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {
@@ -83,6 +110,11 @@ export function getRelativeStats(param) {
         }
         if (moment(history.date).month() === prevMonth && (moment(history.date).year() === 2024) ) {
           prevStats.platforms.push(platform.platformName);
+          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
+            prevStats.platformStats[platform.platformName] += history.amount
+          } else {
+            prevStats.platformStats[platform.platformName] = history.amount
+          }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {
@@ -100,6 +132,11 @@ export function getRelativeStats(param) {
       for (let history of platform.transactionHistory) {
         if (moment(history.date).year() === thisYear) {
           todayStats.platforms.push(platform.platformName);
+          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
+            todayStats.platformStats[platform.platformName] += history.amount
+          } else {
+            todayStats.platformStats[platform.platformName] = history.amount
+          }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {
@@ -108,6 +145,11 @@ export function getRelativeStats(param) {
         }
         if (moment(history.date).year() === prevYear ) {
           prevStats.platforms.push(platform.platformName);
+          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
+            prevStats.platformStats[platform.platformName] += history.amount
+          } else {
+            prevStats.platformStats[platform.platformName] = history.amount
+          }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
           if (history.orderStatus !== "Paid") {

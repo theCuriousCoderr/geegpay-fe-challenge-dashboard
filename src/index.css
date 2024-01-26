@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* .no-scrollbar{
+    ::-
+} */
+
 .slideInRight {
     animation: slideInRight 1s ease-in-out;
     transition: all 2s ease-in-out;

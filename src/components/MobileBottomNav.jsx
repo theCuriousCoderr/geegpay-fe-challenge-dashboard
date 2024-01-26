@@ -10,6 +10,7 @@ import arrow_right from "../images/arrow_right.png";
 import settings from "../images/settings.png";
 import logout from "../images/logout.png";
 import { useNavigate } from 'react-router-dom';
+import HomeIcon from './HomeIcon';
 
 function MobileBottomNav({theme, setTab}) {
   let navigate = useNavigate()
@@ -25,10 +26,10 @@ function MobileBottomNav({theme, setTab}) {
        ].map(items => {
         return (
           <div onClick={() => {setTab(items.text.toLowerCase()); navigate(items.path)} } className='relative bg-red-10 w-[15%] h-14 pt flex flex-col gap-1 items-center justify-center '>
-           {path === items.path && <div className='absolute w-1/3 bg-[#0D062D] h-1 top-0 rounded-b-lg'></div> }
+           {path === items.path && <div className={`absolute w-1/3 ${theme === "light" ? "bg-white" : "bg-[#0D062D]" }  h-1 top-0 rounded-b-lg`}></div> }
           <div className='w-full bg-red-40 flex items-center justify-center'>
             <div className='size-5'>
-            <img src={items.icon} alt={`${items.text} icon`} className='w-full h-full object-cover' />
+            {items.text === "Home" ? theme === "light" ? <HomeIcon /> : <img src={items.icon} alt={`${items.text} icon`} className='w-full h-full object-cover' /> : <img src={items.icon} alt={`${items.text} icon`} className='w-full h-full object-cover' /> }
             </div>
               
           </div>

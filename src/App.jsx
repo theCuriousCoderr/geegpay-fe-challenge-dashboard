@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import ContractMenu from './components/ContractMenu'
 import ExpandMenu from './components/ExpandMenu'
@@ -15,6 +15,8 @@ import Discount from './pages/Discount'
 import Info from './pages/Info'
 import moment from 'moment'
 import { analytics } from './utils'
+import Settings from './pages/Settings'
+import LogOut from './pages/LogOut'
 
 
 
@@ -23,23 +25,10 @@ function App() {
   const [tab, setTab] = useState("home")
 const [theme, setTheme] = useState("light")
 
-// let test = moment("2024-02-24T18:55:22.216Z").year()
-// let arr1 = new Array(366).fill(0)
+useEffect(()=>{
+  console.log("App refreshed")
 
-// let label = Array.from({length: 366}, (_, index) => index + 1);
-// let val = label.map((value, id) => {
-//   let cur = 0
-//   analytics.map(items => {
-//     items.transactionHistory.map(items2 => {
-//       if ((value === moment(items2.date).dayOfYear()) && (moment(items2.date).year() === 2024 )) {
-//         cur = arr1[id] += items2.amount
-//       }
-//     })
-//   })
-//   return cur
-// } 
-
-// )
+}, [theme])
 
 
 
@@ -55,13 +44,13 @@ const [theme, setTheme] = useState("light")
           <img src={expand} alt="expand arrow" className='w-full h-full object-cover' />
           </div>
         </div>
-        {!expandSideNav && <ContractMenu tab={tab} setTab={setTab} theme={theme} setTheme={setTheme} /> }
-        {expandSideNav && <ExpandMenu tab={tab} setTab={setTab} theme={theme} setTheme={setTheme} /> }
+        {!expandSideNav && <ContractMenu setExpandSideNav={setExpandSideNav} tab={tab} setTab={setTab} theme={theme} setTheme={setTheme} /> }
+        {expandSideNav && <ExpandMenu setExpandSideNav={setExpandSideNav} tab={tab} setTab={setTab} theme={theme} setTheme={setTheme} /> }
       </div>
       <div className={`w-full h-full  ${theme === "light" ? "bg-[#FAFAFA]" : "bg-gray-900" } `}>
         <div className={`h-20 border-b ${theme === "light" ? "border-[#DADDDD]  bg-[#FAFAFA]" : "border-slate-800 bg-gray-900" }`}>
           <Header theme={theme} />
-          <MobileHeader theme={theme} setTheme={setTheme} />
+          <MobileHeader theme={theme} setTheme={setTheme} /> 
         </div>
         <div className={`relative w-full h-full ${theme === "light" ? "bg-[#FAFAFA]" : "bg-gray-900" }`}>
           <Routes>
@@ -71,6 +60,8 @@ const [theme, setTheme] = useState("light")
             <Route path="/box" element={<Box />} />
             <Route path="/discount" element={<Discount />} />
             <Route path="/info" element={<Info />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/logout" element={<LogOut />} />
             <Route path="*" element={<NoPage />} />
           </Routes>
         </div>
