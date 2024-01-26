@@ -149,7 +149,11 @@ function ExpandMenu({ tab, setTab, theme, setTheme }) {
                 </div>
               </div>
               <div className="w-[60%] flex items-center justify-start">
-                <p className="font-jarkarta font-light text-base text-[#525252] ">
+              <p
+                  className={`font-jarkarta font-light text-sm ${
+                    theme === "light" ? "text-[#525252]" : "text-slate-400"
+                  } `}
+                >
                   {items.text}
                 </p>
               </div>

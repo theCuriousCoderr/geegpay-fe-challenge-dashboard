@@ -10,7 +10,7 @@ function StatsSect({theme, icon, text, data, rise, fall, up, down, trend}) {
 
     // }, [])
   return (
-    <div className={`w-[48%] xs:max-lg:w-full md:w-[45%] md:mx-auto xs:max-lg:space-y-3 xs:max-lg:p-3 xs:max-lg:h-auto xs:max-lg:my-2 border border-[#EDF2F7] ${theme === "light" ? "bg-white" : "bg-gray-800" } rounded-xl p-2 border border-[#EDF2F7]`}>
+    <div className={`w-[48%] xs:max-lg:w-full md:max-lg:w-[45%] md:max-lg:mx-auto xs:max-lg:space-y-3 xs:max-lg:p-3 xs:max-lg:h-auto xs:max-lg:my-2 border border-[#EDF2F7] ${theme === "light" ? "bg-white" : "bg-gray-800" } rounded-xl p-2 border border-[#EDF2F7]`}>
     <div className="bg-red-10 flex items-center justify-between">
       <div className={`size-10 border  border-[#E6E6E6] rounded-full flex items-center justify-center`}>
         <div className="size-6 flex items-center justify-center">

@@ -6,7 +6,7 @@ import moon from "../images/moon.png";
 
 function MobileHeader({ theme, setTheme }) {
   return (
-    <div className="lg:hidden bg-red-30 p-2 flex justify-between">
+    <div className="lg:hidden bg-red-30 fixed w-full top-0 p-2 flex justify-between">
       <div className="size-10 bg-red-90">
         <div>
           <img src={logo} alt="logo" />

@@ -16,7 +16,7 @@ function ThemeToggle({ theme, setTheme }) {
             setTheme("light");
           }}
           className={`size-7 rounded-full ${
-            theme == "light" ? "bg-red-80" : "bg-slate-700"
+            theme == "light" ? "bg-red-80 " : "bg-slate-700 hover:bg-gray-500"
           }  flex justify-center items-center p-1`}
         >
           <div className="size-5 bg-red-90 rounded-full">
@@ -32,7 +32,7 @@ function ThemeToggle({ theme, setTheme }) {
             setTheme("dark");
           }}
           className={`relative z-20 size-7 rounded-full ${
-            theme == "dark" ? "bg-transparent" : "bg-transparent"
+            theme == "dark" ? "bg-transparent" : "bg-transparent hover:bg-gray-500"
           }  flex justify-center items-center p-1`}
         >
           <div className="size-5 bg-red-90 rounded-full">

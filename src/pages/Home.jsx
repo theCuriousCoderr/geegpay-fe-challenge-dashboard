@@ -19,6 +19,7 @@ import up from "../images/up.png";
 import down from "../images/down.png";
 import rise from "../images/rise.png";
 import fall from "../images/fall.png";
+import view from "../images/view.png";
 import { getRelativeStats } from "../helper_functions/getRelativeStats";
 import StatsSect from "../components/StatsSect";
 import dayData from "../helper_functions/dayTrend";
@@ -236,35 +237,39 @@ function Home({ theme }) {
       className={`relative w-full h-screen xs:max-lg:h-auto p-3 ${theme === "light" ? "bg-[#FAFAFA]" : "bg-gray-900"}  flex flex-col justify-between `}
     >
       {viewAll && <div className={`absolute overflow-scroll left-0 w-full h-full ${theme === "light" ? "bg-white" : "bg-gray-900" }  slideInRight flex justify-center`}>
-        <div onClick={()=> setViewAll(false)} className="absolute size-10 bg-[#ED544E] hover:bg-red-200 rounded-md right-0 m-10 cursor-pointer">
-          <p className="text-3xl flex items-center justify-center">X</p>
+        <div onClick={()=> setViewAll(false)} className="fixed size-10 xs:max-md:size-8 bg-slate-200 hover:bg-red-200 rounded-md right-0 m-10 xs:max-lg:m-0 cursor-pointer">
+          <p className="text-3xl xs:max-md:text-2xl flex items-center justify-center">X</p>
         </div>
-        <div className="w-2/3 mx-auto p-5">
+        <div className="w-2/3 xs:max-lg:w-full mx-auto p-5">
         <table className="w-full">
             <tr className={`font-jarkarta font-medium text-[#9CA4AB] text-left`}>
-              <th className="bg-red-40 w-[30%] py-2">Name</th>
-              <th className="bg-red-40 w-[20%]">Date</th>
-              <th className="bg-red-40 w-[20%]">Amount</th>
-              <th className="bg-red-40 w-[10%]">Status</th>
-              <th className="bg-red-40 w-[10%]">Invoice</th>
+              <th className="bg-red-40 w-[30%] xs:max-md:w-[20%] py-2 xs:max-md:text-sm">Name</th>
+              <th className="bg-red-40 w-[20%] xs:max-md:text-sm ">Date</th>
+              <th className="bg-red-40 w-[20%]  xs:max-md:text-sm">Amount</th>
+              <th className="bg-red-40 w-[10%] md:w-[20%] xs:max-md:text-sm">Status</th>
+              <th className="bg-red-40 w-[10%] xs:max-md:text-sm">Invoice</th>
             </tr>
             {analytics.map(platforms => {
+              // let len = Array.from({length: analytics.length}, (_, index) => index + 1).reverse()
+              // len.length = 5
               let chainRes = platforms.transactionHistory.map(history => {
+                // if (len.includes(history.orderNumber)) {
                   return (
                     <tr className={`bg-red-40 border-t border-[#EDF2F6]`}>
-                      <td className="flex gap-2 items-center py-2">
-                        <div className={`size-10 rounded-full bg-red-30 ${theme !== "light" && "border-2 border-white"} flex items-center justify-center`}>
+                      <td className={`flex xs:max-md:flex-col xs:max-md:items-start xs:max-md:justify-center gap-2 items-center py-2`}>
+                        <div className={`size-10 xs:max-md:size-8 rounded-full bg-red-30 ${theme !== "light" && "border-2 border-white"} flex items-center justify-center`}>
                           <img src={history.photo} alt="client image" className="w-full h-full rounded-full object-cover" />
                         </div>
-                        <p className={`font-jarkarta font-medium text-base ${theme === "light" ? "text-[#3A3F51]" : "text-slate-300" } `}>{history.orderInfo.from}</p>
+                        <p className={`font-jarkarta font-medium text-base xs:max-md:text-left xs:max-md:text-xs ${theme === "light" ? "text-[#3A3F51]" : "text-slate-300" } `}>{history.orderInfo.from}</p>
                         
                         </td>
-                      <td className={`font-jarkarta font-normal text-base ${theme === "light" ? "text-[#737373]" : "text-slate-400" } `}>{moment(history.date).format("ll")}</td>
-                      <td className={`font-jarkarta font-medium text-base ${theme === "light" ? "text-[#0D062D]" : "text-white" } `}>${history.amount}</td>
-                      <td className={`font-jarkarta font-normal text-base ${history.orderStatus.toLowerCase() === "paid" ? "text-[#34CAA5] " : "text-[#ED544E] " }`}>{history.orderStatus}</td>
+                      <td className={`font-jarkarta font-normal text-base xs:max-md:text-xs   ${theme === "light" ? "text-[#737373]" : "text-slate-400" } `}>{moment(history.date).format("ll")}</td>
+                      <td className={`font-jarkarta font-medium text-base xs:max-md:text-xs ${theme === "light" ? "text-[#0D062D]" : "text-white" } `}>${history.amount}</td>
+                      <td className={`font-jarkarta font-normal text-base xs:max-md:text-xs ${history.orderStatus.toLowerCase() === "paid" ? "text-[#34CAA5] " : "text-[#ED544E] " }`}>{history.orderStatus}</td>
                       <td>View</td>
                     </tr>
                   )
+                // }
               })
               return chainRes
             }) }
@@ -273,7 +278,7 @@ function Home({ theme }) {
 
       </div> }
       <div className="xs:max-lg:flex-col flex justify-between bg-yellow-40 xs:max-lg:h-auto h-[49%]">
-        <div className={`w-[59%] xs:max-lg:w-full md:w-[80%] md:mx-auto ${theme === "light" ? "bg-white border-[#EDF2F7]" : "bg-gray-900 border-slate-700" } border xs:max-lg:h-72 md:h-80 h-full rounded-xl p-2`}>
+        <div className={`w-[59%] xs:max-lg:w-full md:max-lg:w-[80%] bg-red-40 md:max-lg:mx-auto ${theme === "light" ? "bg-white border-[#EDF2F7]" : "bg-gray-900 border-slate-700" } border xs:max-lg:h-72 md:max-lg:h-80 h-full rounded-xl p-2`}>
           <div className="flex justify-between items-center bg-red-30">
             <p
               className={`font-jarkarta font-semibold  text-base ${
@@ -379,7 +384,7 @@ function Home({ theme }) {
         <div className={`w-[59%] overflow-scroll xs:max-lg:w-full xs:max-lg:my-10 ${theme === "light" ? "bg-white" : "bg-gray-900 border border-slate-700" }  h-full xs:max-lg:h-auto md:h-auto rounded-xl px-4 py-3`}>
           <div className="flex justify-between">
             <p className={`font-jarkarta font-semibold  text-base ${theme === "light" ? "text-[#26282C]" : "text-slate-200" } `}>Last Orders</p>
-            <button onClick={() => setViewAll(true)} className="font-jarkarta font-medium text-[#34CAA5] text-base">See All</button>
+            <button onClick={() => {window.scrollTo(0,0); setViewAll(true)}} className="font-jarkarta font-medium text-[#34CAA5] text-base">See All</button>
           </div>
           <table className="w-full">
             <tr className={`font-jarkarta font-medium text-[#9CA4AB] text-left`}>
@@ -396,7 +401,7 @@ function Home({ theme }) {
                 if (len.includes(history.orderNumber)) {
                   return (
                     <tr className={`bg-red-40 border-t border-[#EDF2F6]`}>
-                      <td className={`flex xs:max-md:flex-col xs:max-md:items-start xs:max-md:justify-center gap-2 items-center py-2`}>
+                      <td className={`flex bg-yellow-40 xs:max-md:flex-col xs:max-md:items-start xs:max-md:justify-center gap-2 items-center py-2`}>
                         <div className={`size-10 xs:max-md:size-8 rounded-full bg-red-30 ${theme !== "light" && "border-2 border-white"} flex items-center justify-center`}>
                           <img src={history.photo} alt="client image" className="w-full h-full rounded-full object-cover" />
                         </div>
@@ -405,8 +410,16 @@ function Home({ theme }) {
                         </td>
                       <td className={`font-jarkarta font-normal text-base xs:max-md:text-xs   ${theme === "light" ? "text-[#737373]" : "text-slate-400" } `}>{moment(history.date).format("ll")}</td>
                       <td className={`font-jarkarta font-medium text-base xs:max-md:text-xs ${theme === "light" ? "text-[#0D062D]" : "text-white" } `}>${history.amount}</td>
-                      <td className={`font-jarkarta font-normal text-base xs:max-md:text-xs ${history.orderStatus.toLowerCase() === "paid" ? "text-[#34CAA5] " : "text-[#ED544E] " }`}>{history.orderStatus}</td>
-                      <td>View</td>
+                      <td className={`font-jarkarta bg-red-60 font-normal text-base xs:max-md:text-xs ${history.orderStatus.toLowerCase() === "paid" ? "text-[#34CAA5] " : "text-[#ED544E] " }`}>{history.orderStatus}</td>
+                      <td className="fle items-center bg-red-40 h-ful gap-1">
+                        <div className="h-ful flex items-center">
+                        <div className="size-4 ">
+                          <img src={view} alt="view icon" />
+                        </div>
+                        <p className={`font-jarkarta font-normal text-sm xs:max-md:text-left xs:max-md:text-xs ${theme === "light" ? "text-[#3A3F51]" : "text-slate-300" } `}>View</p>
+                        </div>
+                       
+                      </td>
                     </tr>
                   )
                 }
