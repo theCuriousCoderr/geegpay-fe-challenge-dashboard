@@ -57,7 +57,7 @@ function StatsSect({ theme, icon, text, data, rise, fall, up, down, trend }) {
           ? `$${data.today}`
           : data.today}
       </p>
-      <div className="flex items-center xs:max-md:flex-col xs:max-md:w-full gap-2 bg-red-40">
+      <div className="flex lg:items-center xs:max-md:flex-col xs:max-md:w-full gap-2 bg-red-40">
         <div
           className={`flex xs:max-md:w-auto items-center justify-center gap-2 p-1 rounded-md ${
             data.diff === 0
