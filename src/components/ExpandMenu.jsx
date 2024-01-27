@@ -106,7 +106,7 @@ function ExpandMenu({ setExpandSideNav, tab, setTab, theme, setTheme }) {
                 ></div>
               )}
               <div className="w-[30%] h-full bg-red-40 flex items-center justify-center">
-                <div className="size-7">
+                <div className="size-5">
                   <img
                     src={items.icon}
                     alt={`${items.text} icon`}
@@ -158,7 +158,7 @@ function ExpandMenu({ setExpandSideNav, tab, setTab, theme, setTheme }) {
                 ></div>
               )}
               <div className="w-[30%] h-full bg-red-40 flex items-center justify-center">
-                <div className="size-6">
+                <div className="size-5">
                   <img
                     src={items.icon}
                     alt={`${items.text} icon`}

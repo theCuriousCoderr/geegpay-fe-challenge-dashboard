@@ -21,7 +21,7 @@ function Header({ theme, showProfile, setShowProfile }) {
           theme === "light"
             ? "bg-white text-[#26282C]"
             : "bg-gray-900 text-white"
-        } font-jarkart w-[15%] font-semibold  text-2xl flex items-center justify-center`}
+        } font-jarkart w-[15%] font-semibold  text-xl flex items-center justify-center`}
       >
         Dashboard
       </p>
@@ -39,7 +39,7 @@ function Header({ theme, showProfile, setShowProfile }) {
           <input
             type="search"
             placeholder="Search..."
-            className={`cursor-pointer bg-transparent w-full h-full rounded-full border border-[#DADDDD] pl-10 pr-3 py-2 placeholder:font-inter placeholder:font-normal placeholder:text-[#A3A3A3] ${
+            className={`cursor-pointer bg-transparent w-full h-full rounded-full border border-[#DADDDD] pl-10 pr-3 py-2 placeholder:font-inter placeholder:font-normal placeholder:text-[#A3A3A3] placeholder:text-sm ${
               theme !== "light" && "text-white"
             } `}
           />
@@ -49,14 +49,14 @@ function Header({ theme, showProfile, setShowProfile }) {
             <div className="w-[20%] h-full bg-red-40 flex items-center justify-center">
               <div className="size-5 bg-red-70 flex items-center justify-center text-white rounded-full">
                 {theme === "light" ? (
-                  <img src={date} alt="calendar icon" />
+                  <img src={date} alt="calendar icon" className="size-3" />
                 ) : (
                   <CalendarMonthOutlinedIcon />
                 )}
               </div>
             </div>
             <p
-              className={`w-[80%] bg-red-60 font-inter font-medium ${
+              className={`w-[80%] bg-red-60 font-inter font-medium text-sm ${
                 theme === "light" ? "text-[#26282C]" : "text-gray-300"
               } `}
             >
@@ -64,10 +64,10 @@ function Header({ theme, showProfile, setShowProfile }) {
             </p>
           </div>
           <div className="w-[20%] flex items-center justify-center bg-red-40 ">
-            <div className="size-10 rounded-full border border-[#DADDDD] flex items-center justify-center  ">
+            <div className="size-8 rounded-full border border-[#DADDDD] flex items-center justify-center  ">
               <div className="size-5 flex items-center justify-center text-white">
                 {theme === "light" ? (
-                  <img src={alert} alt="notifications icon" />
+                  <img src={alert} alt="notifications icon" className="size-4" />
                 ) : (
                   <NotificationsOutlinedIcon />
                 )}

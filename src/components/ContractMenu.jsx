@@ -90,7 +90,7 @@ function ContractMenu({ setExpandSideNav, tab, setTab, theme, setTheme }) {
                   }  right-0`}
                 ></div>
               )}
-              <div className="size-7">
+              <div className="size-5">
                 <img src={items.icon} alt="logout page icon" />
               </div>
             </div>

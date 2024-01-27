@@ -81,7 +81,7 @@ function App() {
           } `}
         >
           <div
-            className={`h-20 xs:max-lg:flex xs:max-lg:items-center xs:max-lg:w-full border-b ${
+            className={`h-16 xs:max-lg:flex xs:max-lg:items-center xs:max-lg:w-full border-b ${
               theme === "light"
                 ? "border-[#DADDDD]  bg-[#FAFAFA]"
                 : "border-slate-800 bg-gray-900"

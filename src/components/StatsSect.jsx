@@ -6,9 +6,7 @@ function StatsSect({ theme, icon, text, data, rise, fall, up, down, trend }) {
   function handleToggleInfo() {
     setToggleInfo(!toggleInfo);
   }
-  // useEffect(()= >{
 
-  // }, [])
   return (
     <div
       className={`w-[48%] flex flex-col items-start justify-between bg-red-40 xs:max-lg:w-[49%] md:max-lg:w-[45%] md:max-lg:mx-auto xs:max-lg:space-y-3 xs:max-md:space-y-1 xs:max-lg:p-3 xs:max-lg:h-auto xs:max-lg:my-2 border border-[#EDF2F7] ${
@@ -49,7 +47,7 @@ function StatsSect({ theme, icon, text, data, rise, fall, up, down, trend }) {
       </p>
       <p
         onClick={() => handleToggleInfo()}
-        className={`cursor-pointer w-full font-jarkarta font-semibold text-2xl xs:max-md:text-lg ${
+        className={`cursor-pointer w-full font-jarkarta font-semibold text-xl xs:max-md:text-lg ${
           theme === "light" ? "text-[#3A3F51]" : "text-slate-200"
         } `}
       >
@@ -59,7 +57,7 @@ function StatsSect({ theme, icon, text, data, rise, fall, up, down, trend }) {
           ? `$${data.today}`
           : data.today}
       </p>
-      <div className="flex xs:max-md:flex-col xs:max-md:w-full gap-2 bg-red-40">
+      <div className="flex items-center xs:max-md:flex-col xs:max-md:w-full gap-2 bg-red-40">
         <div
           className={`flex xs:max-md:w-auto items-center justify-center gap-2 p-1 rounded-md ${
             data.diff === 0
@@ -69,7 +67,7 @@ function StatsSect({ theme, icon, text, data, rise, fall, up, down, trend }) {
               : "bg-red-400"
           } bg-opacity-15`}
         >
-          <div className="size-3 flex items-center justify-center">
+          <div className="size-2 flex items-center justify-center">
             {data.diff === 0 ? (
               ""
             ) : data.diff > 0 ? (
@@ -96,7 +94,7 @@ function StatsSect({ theme, icon, text, data, rise, fall, up, down, trend }) {
           </p>
         </div>
         <p
-          className={`font-inter font-normal text-sm xs:max-md:text-xs xs:max-md:text-right xs:max-md:text-gray-300 ${
+          className={`font-inter font-normal text-xs xs:max-md:text-xs xs:max-md:text-right xs:max-md:text-[#606060] ${
             theme === "light" ? "text-[#606060]" : "text-slate-400"
           } `}
         >{`vs previous ${trend}`}</p>

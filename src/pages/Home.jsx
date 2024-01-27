@@ -42,8 +42,6 @@ ChartJS.register(
   Legend
 );
 
-let test = moment().year();
-
 let arr1 = new Array(12).fill(0);
 let label = Array.from({ length: 12 }, (_, index) => index + 1);
 let val = label.map((value, id) => {
@@ -211,7 +209,10 @@ function Home({ theme }) {
   };
 
   useEffect(() => {
-    // window.scrollTo(0,0)
+
+      let title = document.querySelector("title")
+      title.innerHTML = "Geegpay FE Challenge Dashboard | Home"
+
     let arr1 = new Array(12).fill(0);
     let label = Array.from({ length: 12 }, (_, index) => index + 1);
     let val = label.map((value, id) => {
@@ -708,7 +709,7 @@ function Home({ theme }) {
                         className={`flex bg-yellow-40 xs:max-md:flex-col xs:max-md:items-start xs:max-md:justify-center gap-2 items-center py-2`}
                       >
                         <div
-                          className={`size-10 xs:max-md:size-8 rounded-full bg-red-30 ${
+                          className={`size-7 xs:max-md:size-8 rounded-full bg-red-30 ${
                             theme !== "light" && "border-2 border-white"
                           } flex items-center justify-center`}
                         >
@@ -797,7 +798,7 @@ function Home({ theme }) {
                 theme === "light" ? "text-[#26282C]" : "text-slate-200"
               } `}
             >
-              Top Platform
+              Top Platforms {trendFilter && <span> - for the <span className="animate-pulse transition-all bg-red-400 rounded-md p-2">{trendFilter}</span></span>}
             </p>
             <button className="font-jarkarta accent font-medium text-[#34CAA5] text-base">
               See All
