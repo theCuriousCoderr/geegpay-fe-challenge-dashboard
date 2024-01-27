@@ -5,6 +5,8 @@ import sun from "../images/sun.png";
 import search from "../images/search.png";
 import moon from "../images/moon.png";
 import { useNavigate } from "react-router-dom";
+import { Menu } from "@mui/material";
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
 function MobileHeader({ theme, setTheme }) {
   let navigate = useNavigate()
@@ -41,7 +43,8 @@ function MobileHeader({ theme, setTheme }) {
             </div>
           )}
         </div>
-        <div className="size-10 bg-red-400">
+        <div className={`size-8 flex items-center justify-center ${theme === "light" ? "bg-slate-700 text-white rounded-lg" : "bg-gray-100 rounded-lg" } `}>
+         <MenuOutlinedIcon />
 
         </div>
       </div>
