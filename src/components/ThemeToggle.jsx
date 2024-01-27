@@ -4,7 +4,13 @@ import moon from "../images/moon.png";
 
 function ThemeToggle({ theme, setTheme }) {
   return (
-    <div className={`cursor-pointer relative ${theme === "light" ? "bg-white" : "bg-gradient-to-tr from-slate-500 to-gray-900" }  w-10 mx-auto h-24 rounded-t-full rounded-b-full p-2 flex justify-center`}>
+    <div
+      className={`cursor-pointer relative ${
+        theme === "light"
+          ? "bg-white"
+          : "bg-gradient-to-tr from-slate-500 to-gray-900"
+      }  w-10 mx-auto h-24 rounded-t-full rounded-b-full p-2 flex justify-center`}
+    >
       <div
         className={`absolute ${
           theme === "light" ? "top-2 bg-[#34CAA5]" : "bottom-2 bg-[#34CAA5]"
@@ -32,7 +38,9 @@ function ThemeToggle({ theme, setTheme }) {
             setTheme("dark");
           }}
           className={`relative z-20 size-7 rounded-full ${
-            theme == "dark" ? "bg-transparent" : "bg-transparent hover:bg-gray-500"
+            theme == "dark"
+              ? "bg-transparent"
+              : "bg-transparent hover:bg-gray-500"
           }  flex justify-center items-center p-1`}
         >
           <div className="size-5 bg-red-90 rounded-full">

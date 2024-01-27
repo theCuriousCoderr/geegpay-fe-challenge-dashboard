@@ -151,6 +151,12 @@ function Home({ theme }) {
     },
   });
   const [platformStats, setPlatformStats] = useState("");
+  const [client, setClient] = useState({
+    x: 0,
+    y: 0,
+  });
+
+  // alert()
   const muiColor = [
     "secondary",
     "primary",
@@ -410,14 +416,17 @@ function Home({ theme }) {
           }  slideInRight flex justify-center`}
         >
           <div
-            onClick={() => setViewAll(false)}
+            onClick={() => {
+              window.scrollTo(client.x, client.y);
+              setViewAll(false);
+            }}
             className="fixed size-10 xs:max-md:size-8 bg-slate-200 hover:bg-red-200 rounded-md right-0 m-10 xs:max-lg:m-0 cursor-pointer"
           >
             <p className="text-3xl xs:max-md:text-2xl flex items-center justify-center">
               X
             </p>
           </div>
-          <div className="w-2/3 xs:max-lg:w-full mx-auto p-5">
+          <div className="w-2/3 xs:max-lg:w-full mx-auto p-5 xs:max-lg:p-3">
             <table className="w-full">
               <tr
                 className={`font-jarkarta font-medium text-[#9CA4AB] text-left`}
@@ -438,7 +447,13 @@ function Home({ theme }) {
                 let chainRes = platforms.transactionHistory.map((history) => {
                   // if (len.includes(history.orderNumber)) {
                   return (
-                    <tr className={`bg-red-40 ${theme === "light" ? "hover:bg-slate-300" : "hover:bg-gray-800" } border-t border-[#EDF2F6]`}>
+                    <tr
+                      className={`bg-red-40 ${
+                        theme === "light"
+                          ? "hover:bg-slate-300"
+                          : "hover:bg-gray-800"
+                      } border-t border-[#EDF2F6]`}
+                    >
                       <td
                         className={`flex xs:max-md:flex-col xs:max-md:items-start xs:max-md:justify-center gap-2 items-center py-2`}
                       >
@@ -551,7 +566,9 @@ function Home({ theme }) {
                   name="trendSort"
                   value={selectInput}
                   className={`border rounded-full text-slate-400 text-sm p-1 ${
-                    theme === "light" ? "bg-transparent hover:bg-gray-200" : "bg-gray-800 hover:bg-gray-700" 
+                    theme === "light"
+                      ? "bg-transparent hover:bg-gray-200"
+                      : "bg-gray-800 hover:bg-gray-700"
                   }`}
                 >
                   <option value="daily">Daily</option>
@@ -643,7 +660,9 @@ function Home({ theme }) {
               Last Orders (5)
             </p>
             <button
-              onClick={() => {
+              onClick={(e) => {
+                setClient({ x: e.clientX, y: e.clientY });
+                window.scrollTo(0, 0);
                 setViewAll(true);
               }}
               className="font-jarkarta font-medium text-[#34CAA5] text-base"
@@ -765,7 +784,13 @@ function Home({ theme }) {
             })}
           </table>
         </div>
-        <div className={`w-[39%] xs:max-lg:w-full ${theme === "light" ? "bg-white border-[#EDF2F7]" : "bg-gray-900 border-slate-500" }  overflow-scroll border px-4 py-3 h-full xs:max-lg:max-h-80 rounded-xl`}>
+        <div
+          className={`w-[39%] xs:max-lg:w-full ${
+            theme === "light"
+              ? "bg-white border-[#EDF2F7]"
+              : "bg-gray-900 border-slate-500"
+          }  overflow-scroll border px-4 py-3 h-full xs:max-lg:max-h-80 rounded-xl`}
+        >
           <div className="flex justify-between bg-red-40">
             <p
               className={`font-jarkarta font-semibold  text-base ${
@@ -774,10 +799,7 @@ function Home({ theme }) {
             >
               Top Platform
             </p>
-            <button
-             
-              className="font-jarkarta accent font-medium text-[#34CAA5] text-base"
-            >
+            <button className="font-jarkarta accent font-medium text-[#34CAA5] text-base">
               See All
             </button>
           </div>
@@ -790,8 +812,20 @@ function Home({ theme }) {
                   let val = items[Object.keys(items)[1]];
                   let percentage = items[Object.keys(items)[0]];
                   return (
-                    <div className={`space-y-1 ${theme === "light" ? "hover:bg-slate-200" : "hover:bg-gray-800" }  `}>
-                      <p className={`font-jarkarta font-semibold ${theme === "light" ? "text-[#22242C]" : "text-slate-200"} `}>
+                    <div
+                      className={`space-y-1 ${
+                        theme === "light"
+                          ? "hover:bg-slate-200"
+                          : "hover:bg-gray-800"
+                      }  `}
+                    >
+                      <p
+                        className={`font-jarkarta font-semibold ${
+                          theme === "light"
+                            ? "text-[#22242C]"
+                            : "text-slate-200"
+                        } `}
+                      >
                         {name}
                       </p>
                       {/* <p> {muiColor[6%id]}</p> */}
@@ -799,27 +833,36 @@ function Home({ theme }) {
                         color={id > 5 ? muiColor[6 % id] : muiColor[id]}
                         variant="determinate"
                         value={percentage}
-                        sx={ theme === "light" ? {
-                          height: 10,
-                          accentColor: red[600],
-                          color: red[500],
-                          accent: red[500],
-                          backgroundColor: grey[100],
-                          borderRadius: 20,
-                        } : {
-                          height: 10,
-                          accentColor: red[600],
-                          color: red[500],
-                          accent: red[500],
-                          backgroundColor: grey[800],
-                          borderRadius: 20,
-                        }}
+                        sx={
+                          theme === "light"
+                            ? {
+                                height: 10,
+                                accentColor: red[600],
+                                color: red[500],
+                                accent: red[500],
+                                backgroundColor: grey[100],
+                                borderRadius: 20,
+                              }
+                            : {
+                                height: 10,
+                                accentColor: red[600],
+                                color: red[500],
+                                accent: red[500],
+                                backgroundColor: grey[800],
+                                borderRadius: 20,
+                              }
+                        }
                       />
-                      <div className={`flex justify-between font-jarkarta font-normal ${theme === "light" ? "text-[#525252]" : "text-slate-400" } `}>
-                       
-                       
+                      <div
+                        className={`flex justify-between font-jarkarta font-normal ${
+                          theme === "light"
+                            ? "text-[#525252]"
+                            : "text-slate-400"
+                        } `}
+                      >
                         <p>
-                          ${val
+                          $
+                          {val
                             .toString()
                             .split("")
                             .reverse()
@@ -834,8 +877,6 @@ function Home({ theme }) {
                             .reverse()
                             .join("")}
                         </p>
-
-
 
                         <p>+{percentage}%</p>
                       </div>

@@ -8,7 +8,7 @@ let val = label.map((value, id) => {
   analytics.map((items) => {
     items.transactionHistory.map((items2) => {
       if (
-        value === (moment(items2.date).month() + 1) &&
+        value === moment(items2.date).month() + 1 &&
         moment(items2.date).year() === 2024
       ) {
         cur = arr1[id] += items2.amount;
@@ -33,8 +33,8 @@ label = [
 ];
 
 const monthData = {
-    labels: label,
-    datasets: [
+  labels: label,
+  datasets: [
     {
       label: "Monthly",
       data: val,
@@ -42,7 +42,7 @@ const monthData = {
       hoverBackgroundColor: "rgba(52,202,165,1)",
       borderRadius: { topLeft: 30, topRight: 30 },
     },
-    ],
-    };
-    
-    export default monthData;
+  ],
+};
+
+export default monthData;

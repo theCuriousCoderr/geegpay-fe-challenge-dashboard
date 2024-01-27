@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import profile from "../images/profile.png";
 
 function Profile() {
-  window.scrollTo(0,0)
+  window.scrollTo(0, 0);
   return (
     <div className="w-full h-screen bg-red-40 flex flex-wrap pt-40 justify-center">
       <div className="size-40 bg-yellow-70">
@@ -13,7 +13,7 @@ function Profile() {
         />
       </div>
     </div>
-  )
+  );
 }
 
-export default Profile
+export default Profile;

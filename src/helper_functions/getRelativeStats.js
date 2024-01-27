@@ -2,14 +2,13 @@ import moment from "moment";
 import { analytics } from "../utils";
 
 export function getRelativeStats(param) {
-
   let todayStats = {
     total_order: 0,
     total_refund: 0,
     average_sales: 0,
     total_income: 0,
     platforms: [],
-    platformStats: {}
+    platformStats: {},
   };
   let prevStats = {
     total_order: 0,
@@ -17,7 +16,7 @@ export function getRelativeStats(param) {
     average_sales: 0,
     total_income: 0,
     platforms: [],
-    platformStats: {}
+    platformStats: {},
   };
 
   if (param === "day") {
@@ -25,12 +24,19 @@ export function getRelativeStats(param) {
     let prevDay = today - 1;
     for (let platform of analytics) {
       for (let history of platform.transactionHistory) {
-        if (moment(history.date).dayOfYear() === today && (moment(history.date).year() === 2024)) {
+        if (
+          moment(history.date).dayOfYear() === today &&
+          moment(history.date).year() === 2024
+        ) {
           todayStats.platforms.push(platform.platformName);
-          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
-            todayStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(todayStats.platformStats).includes(
+              platform.platformName
+            )
+          ) {
+            todayStats.platformStats[platform.platformName] += history.amount;
           } else {
-            todayStats.platformStats[platform.platformName] = history.amount
+            todayStats.platformStats[platform.platformName] = history.amount;
           }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
@@ -38,12 +44,17 @@ export function getRelativeStats(param) {
             todayStats.total_refund += 1;
           }
         }
-        if (moment(history.date).dayOfYear() === prevDay && (moment(history.date).year() === 2024)) {
+        if (
+          moment(history.date).dayOfYear() === prevDay &&
+          moment(history.date).year() === 2024
+        ) {
           prevStats.platforms.push(platform.platformName);
-          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
-            prevStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(prevStats.platformStats).includes(platform.platformName)
+          ) {
+            prevStats.platformStats[platform.platformName] += history.amount;
           } else {
-            prevStats.platformStats[platform.platformName] = history.amount
+            prevStats.platformStats[platform.platformName] = history.amount;
           }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
@@ -56,16 +67,23 @@ export function getRelativeStats(param) {
   }
 
   if (param === "week") {
-    let thisWeek =  moment().isoWeek()
-    let prevWeek = thisWeek - 1
+    let thisWeek = moment().isoWeek();
+    let prevWeek = thisWeek - 1;
     for (let platform of analytics) {
       for (let history of platform.transactionHistory) {
-        if (moment(history.date).isoWeek() === thisWeek  && (moment(history.date).year() === 2024)) {
+        if (
+          moment(history.date).isoWeek() === thisWeek &&
+          moment(history.date).year() === 2024
+        ) {
           todayStats.platforms.push(platform.platformName);
-          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
-            todayStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(todayStats.platformStats).includes(
+              platform.platformName
+            )
+          ) {
+            todayStats.platformStats[platform.platformName] += history.amount;
           } else {
-            todayStats.platformStats[platform.platformName] = history.amount
+            todayStats.platformStats[platform.platformName] = history.amount;
           }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
@@ -73,12 +91,17 @@ export function getRelativeStats(param) {
             todayStats.total_refund += 1;
           }
         }
-        if (moment(history.date).dayOfYear() === prevWeek && (moment(history.date).year() === 2024)) {
+        if (
+          moment(history.date).dayOfYear() === prevWeek &&
+          moment(history.date).year() === 2024
+        ) {
           prevStats.platforms.push(platform.platformName);
-          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
-            prevStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(prevStats.platformStats).includes(platform.platformName)
+          ) {
+            prevStats.platformStats[platform.platformName] += history.amount;
           } else {
-            prevStats.platformStats[platform.platformName] = history.amount
+            prevStats.platformStats[platform.platformName] = history.amount;
           }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
@@ -91,16 +114,23 @@ export function getRelativeStats(param) {
   }
 
   if (param === "month") {
-    let thisMonth = moment().month()
-    let prevMonth = thisMonth - 1
+    let thisMonth = moment().month();
+    let prevMonth = thisMonth - 1;
     for (let platform of analytics) {
       for (let history of platform.transactionHistory) {
-        if (moment(history.date).month() === thisMonth  && (moment(history.date).year() === 2024)) {
+        if (
+          moment(history.date).month() === thisMonth &&
+          moment(history.date).year() === 2024
+        ) {
           todayStats.platforms.push(platform.platformName);
-          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
-            todayStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(todayStats.platformStats).includes(
+              platform.platformName
+            )
+          ) {
+            todayStats.platformStats[platform.platformName] += history.amount;
           } else {
-            todayStats.platformStats[platform.platformName] = history.amount
+            todayStats.platformStats[platform.platformName] = history.amount;
           }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
@@ -108,12 +138,17 @@ export function getRelativeStats(param) {
             todayStats.total_refund += 1;
           }
         }
-        if (moment(history.date).month() === prevMonth && (moment(history.date).year() === 2024) ) {
+        if (
+          moment(history.date).month() === prevMonth &&
+          moment(history.date).year() === 2024
+        ) {
           prevStats.platforms.push(platform.platformName);
-          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
-            prevStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(prevStats.platformStats).includes(platform.platformName)
+          ) {
+            prevStats.platformStats[platform.platformName] += history.amount;
           } else {
-            prevStats.platformStats[platform.platformName] = history.amount
+            prevStats.platformStats[platform.platformName] = history.amount;
           }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
@@ -126,16 +161,20 @@ export function getRelativeStats(param) {
   }
 
   if (param === "year") {
-    let thisYear = moment().year()
-    let prevYear = thisYear - 1
+    let thisYear = moment().year();
+    let prevYear = thisYear - 1;
     for (let platform of analytics) {
       for (let history of platform.transactionHistory) {
         if (moment(history.date).year() === thisYear) {
           todayStats.platforms.push(platform.platformName);
-          if (Object.keys(todayStats.platformStats).includes(platform.platformName)) {
-            todayStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(todayStats.platformStats).includes(
+              platform.platformName
+            )
+          ) {
+            todayStats.platformStats[platform.platformName] += history.amount;
           } else {
-            todayStats.platformStats[platform.platformName] = history.amount
+            todayStats.platformStats[platform.platformName] = history.amount;
           }
           todayStats.total_order += 1;
           todayStats.total_income += history.amount;
@@ -143,12 +182,14 @@ export function getRelativeStats(param) {
             todayStats.total_refund += 1;
           }
         }
-        if (moment(history.date).year() === prevYear ) {
+        if (moment(history.date).year() === prevYear) {
           prevStats.platforms.push(platform.platformName);
-          if (Object.keys(prevStats.platformStats).includes(platform.platformName)) {
-            prevStats.platformStats[platform.platformName] += history.amount
+          if (
+            Object.keys(prevStats.platformStats).includes(platform.platformName)
+          ) {
+            prevStats.platformStats[platform.platformName] += history.amount;
           } else {
-            prevStats.platformStats[platform.platformName] = history.amount
+            prevStats.platformStats[platform.platformName] = history.amount;
           }
           prevStats.total_order += 1;
           prevStats.total_income += history.amount;
@@ -160,21 +201,20 @@ export function getRelativeStats(param) {
     }
   }
 
-
-
-
   return {
     today: {
       ...todayStats,
-      average_sales: todayStats.platforms.length !== 0 ? Math.round(
-        todayStats.total_order / todayStats.platforms.length
-      ) : 0, 
+      average_sales:
+        todayStats.platforms.length !== 0
+          ? Math.round(todayStats.total_order / todayStats.platforms.length)
+          : 0,
     },
     prev: {
       ...prevStats,
-      average_sales: prevStats.platforms.length !== 0 ? Math.round(
-        prevStats.total_order / prevStats.platforms.length
-      ) : 0,
+      average_sales:
+        prevStats.platforms.length !== 0
+          ? Math.round(prevStats.total_order / prevStats.platforms.length)
+          : 0,
     },
   };
 }

@@ -1,8 +1,8 @@
-import React from 'react'
+import React from "react";
 import discount from "../images/discount.png";
 
 function Discount() {
-  window.scrollTo(0,0)
+  window.scrollTo(0, 0);
   return (
     <div className="w-full h-screen bg-red-40 flex flex-wrap pt-40 justify-center">
       <div className="size-40 bg-yellow-70">
@@ -13,7 +13,7 @@ function Discount() {
         />
       </div>
     </div>
-  )
+  );
 }
 
-export default Discount
+export default Discount;

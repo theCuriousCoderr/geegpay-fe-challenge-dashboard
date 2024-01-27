@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
 import HomeIcon from "./HomeIcon";
 
-function ExpandMenu({setExpandSideNav, tab, setTab, theme, setTheme }) {
+function ExpandMenu({ setExpandSideNav, tab, setTab, theme, setTheme }) {
   let navigate = useNavigate();
   let path = window.location.pathname;
 
@@ -138,7 +138,18 @@ function ExpandMenu({setExpandSideNav, tab, setTab, theme, setTheme }) {
           { icon: logout, text: "Logout", path: "/logout" },
         ].map((items) => {
           return (
-            <div onClick={() => {items.text === "Expand" ? setExpandSideNav(prevState => !prevState) : navigate(items.path) }} className={`relative bg-red-70 ${theme === "light" ? "hover:bg-[#34CAA5] hover:bg-opacity-10 " : "hover:bg-slate-700" } rounded-lg cursor-pointer w-full h-10 flex items-center justify-center`}>
+            <div
+              onClick={() => {
+                items.text === "Expand"
+                  ? setExpandSideNav((prevState) => !prevState)
+                  : navigate(items.path);
+              }}
+              className={`relative bg-red-70 ${
+                theme === "light"
+                  ? "hover:bg-[#34CAA5] hover:bg-opacity-10 "
+                  : "hover:bg-slate-700"
+              } rounded-lg cursor-pointer w-full h-10 flex items-center justify-center`}
+            >
               {path === items.path && (
                 <div
                   className={`absolute h-[50%] w-1 rounded-l-md ${
@@ -156,7 +167,7 @@ function ExpandMenu({setExpandSideNav, tab, setTab, theme, setTheme }) {
                 </div>
               </div>
               <div className="w-[60%] flex items-center justify-start">
-              <p
+                <p
                   className={`font-jarkarta font-light text-sm ${
                     theme === "light" ? "text-[#525252]" : "text-slate-400"
                   } `}

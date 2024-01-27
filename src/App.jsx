@@ -17,9 +17,9 @@ import moment from "moment";
 import { analytics } from "./utils";
 import Settings from "./pages/Settings";
 import LogOut from "./pages/LogOut";
-import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
-import PaddingOutlinedIcon from '@mui/icons-material/PaddingOutlined';
-import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import PaddingOutlinedIcon from "@mui/icons-material/PaddingOutlined";
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 function App() {
   const [expandSideNav, setExpandSideNav] = useState(false);
@@ -30,13 +30,12 @@ function App() {
   useEffect(() => {
     console.log("App refreshed");
     function getTheme() {
-      let mediaQueryObj = window.matchMedia('(prefers-color-scheme: dark)');
-      let isDarkMode = mediaQueryObj.matches; 
-      let currentTheme = isDarkMode ? "dark" : "light"
-      setTheme(currentTheme)
+      let mediaQueryObj = window.matchMedia("(prefers-color-scheme: dark)");
+      let isDarkMode = mediaQueryObj.matches;
+      let currentTheme = isDarkMode ? "dark" : "light";
+      setTheme(currentTheme);
     }
-    theme === "" && getTheme()
-
+    theme === "" && getTheme();
   }, [theme]);
 
   return (
@@ -92,7 +91,12 @@ function App() {
               showProfile={showProfile}
               setShowProfile={setShowProfile}
             />
-            <MobileHeader theme={theme} setTheme={setTheme} />
+            <MobileHeader
+              theme={theme}
+              setTheme={setTheme}
+              showProfile={showProfile}
+              setShowProfile={setShowProfile}
+            />
           </div>
           <div
             className={`relative w-full h-full ${
@@ -100,25 +104,65 @@ function App() {
             }`}
           >
             {showProfile && (
-              <div className={`absolute slideInRig z-20 right-5 p-5 -top-0 ${theme === "light" ? "bg-slate-50" : "bg-gray-800 shadow-slate-40000" }  rounded border shadow-md`}>
-                <div className={` ${theme === "light" ? "text-slate-500" : "text-slate-300" } font-normal space-y-2`}>
+              <div
+                className={`absolute slideInRig z-20 right-5 p-5 -top-0 ${
+                  theme === "light"
+                    ? "bg-slate-50"
+                    : "bg-gray-800 shadow-slate-40000"
+                }  rounded border shadow-md`}
+              >
+                <div
+                  className={` ${
+                    theme === "light" ? "text-slate-500" : "text-slate-300"
+                  } font-normal space-y-2`}
+                >
                   <div>
-                    <p className={`font-jarkarta font-semibold text-sm ${theme === "light" ? "text-black" : "text-white" } `}>Ola Lekan</p>
-                    <p className={`font-jarkarta font-light text-xs ${theme === "light" ? "text-black" : "text-slate-100" } `}>elijahdimeji549@gmail.com</p>
+                    <p
+                      className={`font-jarkarta font-semibold text-sm ${
+                        theme === "light" ? "text-black" : "text-white"
+                      } `}
+                    >
+                      Ola Lekan
+                    </p>
+                    <p
+                      className={`font-jarkarta font-light text-xs ${
+                        theme === "light" ? "text-black" : "text-slate-100"
+                      } `}
+                    >
+                      elijahdimeji549@gmail.com
+                    </p>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div
+                    className={`flex items-center gap-4 px-3 py-1 rounded-md ${
+                      theme === "light"
+                        ? "hover:bg-slate-200 "
+                        : "hover:bg-gray-700"
+                    }`}
+                  >
                     <div className="size-3 bg-green-40 flex items-center justify-center">
                       <PermIdentityOutlinedIcon />
                     </div>
                     <p>Your profile</p>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div
+                    className={`flex items-center gap-4 px-3 py-1 rounded-md ${
+                      theme === "light"
+                        ? "hover:bg-slate-200 "
+                        : "hover:bg-gray-700"
+                    }`}
+                  >
                     <div className="size-3 bg-green-40 flex items-center justify-center">
                       <AddOutlinedIcon />
                     </div>
                     <p>Add platform</p>
                   </div>
-                  <div className="flex items-center gap-4">
+                  <div
+                    className={`flex items-center gap-4 px-3 py-1 rounded-md ${
+                      theme === "light"
+                        ? "hover:bg-slate-200 "
+                        : "hover:bg-gray-700"
+                    }`}
+                  >
                     <div className="size-3 bg-green-40 flex items-center justify-center">
                       <PaddingOutlinedIcon />
                     </div>

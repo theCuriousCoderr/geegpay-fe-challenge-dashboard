@@ -39,7 +39,9 @@ function Header({ theme, showProfile, setShowProfile }) {
           <input
             type="search"
             placeholder="Search..."
-            className={`cursor-pointer bg-transparent w-full h-full rounded-full border border-[#DADDDD] pl-10 pr-3 py-2 placeholder:font-inter placeholder:font-normal placeholder:text-[#A3A3A3] ${theme !== "light" && "text-white" } `}
+            className={`cursor-pointer bg-transparent w-full h-full rounded-full border border-[#DADDDD] pl-10 pr-3 py-2 placeholder:font-inter placeholder:font-normal placeholder:text-[#A3A3A3] ${
+              theme !== "light" && "text-white"
+            } `}
           />
         </div>
         <div className="w-64 bg-yellow-40 cursor-pointer flex items-center">
@@ -74,7 +76,10 @@ function Header({ theme, showProfile, setShowProfile }) {
           </div>
         </div>
 
-        <div onClick={() => setShowProfile(!showProfile)} className="cursor-pointer w-52 bg-whit rounded-full border border-[#DADDDD] p-1 flex items-center flex-wrap bg-red-30">
+        <div
+          onClick={() => setShowProfile(!showProfile)}
+          className="cursor-pointer w-52 bg-whit rounded-full border border-[#DADDDD] p-1 flex items-center flex-wrap bg-red-30"
+        >
           <div className="h-full aspect-square bg-red-300 rounded-full flex items-center justify-center">
             <div className="size-full flex items-center justify-center">
               <img
@@ -94,12 +99,20 @@ function Header({ theme, showProfile, setShowProfile }) {
             >
               Ola Lekan
             </p>
-            <p className={`font-inter font-xs truncate text-ellipsis text-sm text-right  ${theme === "light" ? "text-[#787486]" : "text-slate-200" }`}>
+            <p
+              className={`font-inter font-xs truncate text-ellipsis text-sm text-right  ${
+                theme === "light" ? "text-[#787486]" : "text-slate-200"
+              }`}
+            >
               elijahdimeji549@gmail.com
             </p>
           </div>
           <div className="w-[10%] bg-red-40 flex items-center justify-center">
-            <div className={`size-5 flex items-center justify-center text-white transition-all ${!showProfile ? "rotate-0" : "rotate-180" }`}>
+            <div
+              className={`size-5 flex items-center justify-center text-white transition-all ${
+                !showProfile ? "rotate-0" : "rotate-180"
+              }`}
+            >
               {theme === "light" ? (
                 <img src={arrow_down} alt="expand profile." />
               ) : (
