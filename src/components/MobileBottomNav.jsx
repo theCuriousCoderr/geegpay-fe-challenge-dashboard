@@ -35,17 +35,17 @@ function MobileBottomNav({ theme, setTab }) {
               setTab(items.text.toLowerCase());
               navigate(items.path);
             }}
-            className="relative bg-red-10 w-[15%] h-14 pt flex flex-col gap-1 items-center justify-center "
+            className={`relative ${theme === "light" ? "hover:bg-gray-700" : "hover:bg-slate-300" } w-[15%] h-14 md:max-lg:h-20 flex flex-col gap-1 items-center justify-center `}
           >
             {path === items.path && (
               <div
                 className={`absolute w-1/3 ${
                   theme === "light" ? "bg-white" : "bg-[#0D062D]"
-                }  h-1 top-0 rounded-b-lg`}
+                }  h-1 md:max-lg:h-2 top-0 rounded-b-lg`}
               ></div>
             )}
             <div className="w-full bg-red-40 flex items-center justify-center">
-              <div className="size-5">
+              <div className="size-5 md:max-lg:size-10 flex items-center justify-center">
                 {items.text === "Home" ? (
                   theme === "light" ? (
                     <HomeIcon />
@@ -67,7 +67,7 @@ function MobileBottomNav({ theme, setTab }) {
             </div>
             <div className="w-full flex items-center justify-center bg-red-40">
               <p
-                className={`font-jarkarta font-light text-xs  ${
+                className={`font-jarkarta font-light text-xs md:max-lg:text-base  ${
                   theme === "light" ? "text-slate-300" : "text-slate-900"
                 } `}
               >

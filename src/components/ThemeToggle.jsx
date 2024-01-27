@@ -7,8 +7,8 @@ function ThemeToggle({ theme, setTheme }) {
     <div
       className={`cursor-pointer relative ${
         theme === "light"
-          ? "bg-white"
-          : "bg-gradient-to-tr from-slate-500 to-gray-900"
+          ? "bg-white hover:bg-gray-200"
+          : "bg-gradient-to-tr from-slate-500 to-gray-900 hover:to-slate-400"
       }  w-10 mx-auto h-24 rounded-t-full rounded-b-full p-2 flex justify-center`}
     >
       <div

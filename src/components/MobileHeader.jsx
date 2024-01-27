@@ -12,7 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 function MobileHeader({ theme, setTheme, showProfile, setShowProfile }) {
   let navigate = useNavigate();
   return (
-    <div className="lg:hidden bg-red-30 p-2 flex justify-between">
+    <div className="lg:hidden bg-red-30 xs:max-lg:w-full p-2 flex justify-between">
       <div
         onClick={() => navigate("/")}
         className="w-[20%] flex items-center justify-center bg-red-40"
@@ -24,8 +24,8 @@ function MobileHeader({ theme, setTheme, showProfile, setShowProfile }) {
         </div>
       </div>
 
-      <div className="w-[80%] bg-red-90 flex justify-end items-center gap-2">
-        <div className="relative w-40  p-1">
+      <div className="w-[80%] bg-red-90 flex justify-end md:justify-center items-center gap-2 md:gap-10">
+        <div className="relative w-40 md:w-1/2 p-1">
           <div className="absolute top-0 left-0 h-full aspect-square bg-red-40 flex items-center justify-center">
             <div className="size-4">
               <img src={search} alt="search icon" />
@@ -37,7 +37,7 @@ function MobileHeader({ theme, setTheme, showProfile, setShowProfile }) {
             className="bg-transparent w-full h-full rounded-full border border-[#DADDDD] pl-10 pr-3 py-2 placeholder:font-inter placeholder:font-normal placeholder:text-[#A3A3A3] "
           />
         </div>
-        <div className="size-8 bg-red-40">
+        <div className="size-8 md:size-10 bg-red-40">
           {theme === "light" ? (
             <div
               onClick={() => setTheme("dark")}
@@ -56,7 +56,7 @@ function MobileHeader({ theme, setTheme, showProfile, setShowProfile }) {
         </div>
         <div
           onClick={() => setShowProfile(!showProfile)}
-          className={`size-8 flex items-center justify-center ${
+          className={`size-8 md:size-10 flex items-center justify-center ${
             theme === "light"
               ? "bg-slate-700 text-white rounded-lg"
               : "bg-gray-100 rounded-lg"

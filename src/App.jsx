@@ -30,9 +30,10 @@ function App() {
   useEffect(() => {
     console.log("App refreshed");
     function getTheme() {
-      let mediaQueryObj = window.matchMedia("(prefers-color-scheme: dark)");
-      let isDarkMode = mediaQueryObj.matches;
-      let currentTheme = isDarkMode ? "dark" : "light";
+      let mediaQueryObj = window.matchMedia("(prefers-color-scheme: light)");
+      let isLightMode = mediaQueryObj.matches;
+      let currentTheme = isLightMode ? "light" : "dark";
+      // alert(currentTheme)
       setTheme(currentTheme);
     }
     theme === "" && getTheme();
@@ -44,7 +45,7 @@ function App() {
         theme === "light" ? "bg-white" : "bg-gray-900"
       }  xs:max-lg:pb-20 `}
     >
-      <div className="lg:hidden fixed h-10 bg-red-30 z-10 w-full bottom-3">
+      <div className="lg:hidden fixed h-10 md:max-lg:h-16 bg-red-30 z-10 w-full bottom-3">
         <MobileBottomNav theme={theme} setTab={setTab} />
       </div>
       <div className="h-full w-full bg-yellow-40 flex">
@@ -80,7 +81,7 @@ function App() {
           } `}
         >
           <div
-            className={`h-20 border-b ${
+            className={`h-20 xs:max-lg:flex xs:max-lg:items-center xs:max-lg:w-full border-b ${
               theme === "light"
                 ? "border-[#DADDDD]  bg-[#FAFAFA]"
                 : "border-slate-800 bg-gray-900"

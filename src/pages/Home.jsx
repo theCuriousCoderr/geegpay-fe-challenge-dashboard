@@ -313,11 +313,11 @@ function Home({ theme }) {
           onClick={() => {
             setViewInvoice("");
           }}
-          className="absolute z-30 xs:max-lg:fixed w-full h-full bg-gray-900 bg-opacity-90 left-0 top-0 flex justify-center"
+          className="absolute z-30 xs:max-lg:fixed w-full h-full bg-gray-900 bg-opacity-90 left-0 top-0 flex md:max-lg:items-center justify-center"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative xs:max-lg:w-[90%] w-96 mt-20 xs:max-lg:mt-20 bg-white rounded-xl h-[32rem] xs:max-lg:h-[28rem]"
+            className="relative xs:max-lg:w-[90%] mx-auto md:max-lg:w-[25rem] w-96 mt-20 md:max-lg:mt-0 xs:max-lg:mt-20 bg-white rounded-xl h-[32rem] xs:max-lg:h-[28rem]"
           >
             <div className="absolute bg-[#34CAA5] p-4  right-10 xs:max-lg:right-5 h-16 xs:max-lg:h-auto z-10 ">
               <p className="text-2xl xs:max-lg:text-lg font-jarkarta font-semibold">
@@ -584,7 +584,7 @@ function Home({ theme }) {
           </div>
         </div>
         <p
-          className={`lg:hidden text-2xl font-semibold xs:max-md:mt-10 md:text-center ${
+          className={`lg:hidden text-2xl font-semibold xs:max-md:mt-10 md:mt-20 md:text-3xl md:text-center ${
             theme !== "light" && "text-slate-100"
           }`}
         >
@@ -645,7 +645,7 @@ function Home({ theme }) {
       </div>
       <div className="flex xs:max-lg:flex-col justify-between bg-yellow-40 xs:max-lg:h-auto h-[49%]">
         <div
-          className={`w-[59%] overflow-scroll xs:max-lg:w-full xs:max-lg:my-10 ${
+          className={`w-[59%] md:max-lg:mx-auto overflow-scroll xs:max-lg:w-full xs:max-lg:my-10 ${
             theme === "light"
               ? "bg-white border border-[#EDF2F7]"
               : "bg-gray-900 border border-slate-700"
@@ -785,7 +785,7 @@ function Home({ theme }) {
           </table>
         </div>
         <div
-          className={`w-[39%] xs:max-lg:w-full ${
+          className={`w-[39%] xs:max-lg:w-full md:max-lg:w-2/3  md:max-lg:mx-auto ${
             theme === "light"
               ? "bg-white border-[#EDF2F7]"
               : "bg-gray-900 border-slate-500"
@@ -823,7 +823,7 @@ function Home({ theme }) {
                         className={`font-jarkarta font-semibold ${
                           theme === "light"
                             ? "text-[#22242C]"
-                            : "text-slate-200"
+                            : "text-white"
                         } `}
                       >
                         {name}
