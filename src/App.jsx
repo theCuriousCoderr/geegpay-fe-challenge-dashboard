@@ -22,7 +22,7 @@ import PaddingOutlinedIcon from "@mui/icons-material/PaddingOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 function App() {
-  const [expandSideNav, setExpandSideNav] = useState(false);
+  const [expandSideNav, setExpandSideNav] = useState(true);
   const [tab, setTab] = useState("home");
   const [theme, setTheme] = useState("");
   const [showProfile, setShowProfile] = useState(false);
